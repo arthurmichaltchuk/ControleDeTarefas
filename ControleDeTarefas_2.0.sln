@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleDeTarefas_2.0.ConsoleApp", "ControleDeTarefas_2.0.ConsoleApp\ControleDeTarefas_2.0.ConsoleApp.csproj", "{0E4550A7-3632-436F-9599-4F6330789F80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testes", "Testes\Testes.csproj", "{D8CD3D87-1F61-493E-A0BB-AD90DDAE1C42}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BancoDeDados.ControleDeTarefas", "BancoDeDados.ControleDeTarefas\BancoDeDados.ControleDeTarefas.sqlproj", "{FCEAD5F0-DF74-48CB-9E87-2EF60896776C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E4550A7-3632-436F-9599-4F6330789F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E4550A7-3632-436F-9599-4F6330789F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E4550A7-3632-436F-9599-4F6330789F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E4550A7-3632-436F-9599-4F6330789F80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8CD3D87-1F61-493E-A0BB-AD90DDAE1C42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8CD3D87-1F61-493E-A0BB-AD90DDAE1C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8CD3D87-1F61-493E-A0BB-AD90DDAE1C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8CD3D87-1F61-493E-A0BB-AD90DDAE1C42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCEAD5F0-DF74-48CB-9E87-2EF60896776C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCEAD5F0-DF74-48CB-9E87-2EF60896776C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCEAD5F0-DF74-48CB-9E87-2EF60896776C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FCEAD5F0-DF74-48CB-9E87-2EF60896776C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCEAD5F0-DF74-48CB-9E87-2EF60896776C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCEAD5F0-DF74-48CB-9E87-2EF60896776C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE69FE8D-DBCD-468F-B3CE-D4E846D59B58}
+	EndGlobalSection
+EndGlobal

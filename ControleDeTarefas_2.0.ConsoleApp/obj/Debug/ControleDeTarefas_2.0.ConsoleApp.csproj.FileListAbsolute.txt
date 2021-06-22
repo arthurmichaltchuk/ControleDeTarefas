@@ -1,0 +1,7 @@
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\ControleDeTarefas_2.0.ConsoleApp\bin\Debug\ControleDeTarefas_2.0.ConsoleApp.exe.config
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\ControleDeTarefas_2.0.ConsoleApp\bin\Debug\ControleDeTarefas_2.0.ConsoleApp.exe
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\ControleDeTarefas_2.0.ConsoleApp\bin\Debug\ControleDeTarefas_2.0.ConsoleApp.pdb
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\ControleDeTarefas_2.0.ConsoleApp\obj\Debug\ControleDeTarefas_2.0.ConsoleApp.csproj.AssemblyReference.cache
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\ControleDeTarefas_2.0.ConsoleApp\obj\Debug\ControleDeTarefas_2.0.ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\ControleDeTarefas_2.0.ConsoleApp\obj\Debug\ControleDeTarefas_2.0.ConsoleApp.exe
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\ControleDeTarefas_2.0.ConsoleApp\obj\Debug\ControleDeTarefas_2.0.ConsoleApp.pdb

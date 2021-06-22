@@ -1,0 +1,17 @@
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\bin\Debug\Testes.dll
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\bin\Debug\Testes.pdb
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\bin\Debug\ControleDeTarefas_2.0.ConsoleApp.exe
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\bin\Debug\ControleDeTarefas_2.0.ConsoleApp.pdb
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\bin\Debug\ControleDeTarefas_2.0.ConsoleApp.exe.config
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\obj\Debug\Testes.csproj.AssemblyReference.cache
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\obj\Debug\Testes.csproj.CoreCompileInputs.cache
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\obj\Debug\Testes.csproj.CopyComplete
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\obj\Debug\Testes.dll
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\Testes\obj\Debug\Testes.pdb

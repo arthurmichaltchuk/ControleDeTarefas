@@ -1,0 +1,84 @@
+21/06/2021 21:02:58	This log contains information about the import schema operation into project 'BancoDeDados.ControleDeTarefas' on computer 'DESKTOP-UC9DL3E' by user 'Michaltchuk'.
+21/06/2021 21:02:58	Import of database schema has started.
+21/06/2021 21:03:01	Gathering database credentials
+21/06/2021 21:03:01	Gathering database options
+21/06/2021 21:03:01	Gathering users
+21/06/2021 21:03:01	Gathering roles
+21/06/2021 21:03:01	Gathering application roles
+21/06/2021 21:03:01	Gathering role memberships
+21/06/2021 21:03:01	Gathering filegroups
+21/06/2021 21:03:01	Gathering full-text catalogs
+21/06/2021 21:03:01	Gathering assemblies
+21/06/2021 21:03:01	Gathering certificates
+21/06/2021 21:03:01	Gathering asymmetric keys
+21/06/2021 21:03:01	Gathering symmetric keys
+21/06/2021 21:03:01	Gathering encrypted symmetric keys
+21/06/2021 21:03:01	Gathering schemas
+21/06/2021 21:03:01	Gathering XML schema collections
+21/06/2021 21:03:01	Gathering user-defined data types
+21/06/2021 21:03:01	Gathering user-defined types
+21/06/2021 21:03:01	Gathering table types
+21/06/2021 21:03:01	Gathering unique keys for table types
+21/06/2021 21:03:01	Gathering primary keys for table types
+21/06/2021 21:03:01	Gathering indexes for table types
+21/06/2021 21:03:01	Gathering check constraints for table types
+21/06/2021 21:03:01	Gathering default constraints for table types
+21/06/2021 21:03:02	Gathering partition functions
+21/06/2021 21:03:02	Gathering partition schemes
+21/06/2021 21:03:02	Gathering functions
+21/06/2021 21:03:02	Gathering encrypted functions
+21/06/2021 21:03:02	Gathering aggregates
+21/06/2021 21:03:02	Gathering procedures
+21/06/2021 21:03:02	Gathering encrypted procedures
+21/06/2021 21:03:02	Gathering tables
+21/06/2021 21:03:02	Gathering primary keys
+21/06/2021 21:03:02	Gathering unique constraints
+21/06/2021 21:03:02	Gathering foreign keys
+21/06/2021 21:03:02	Gathering default constraints
+21/06/2021 21:03:02	Gathering check constraints
+21/06/2021 21:03:02	Gathering views
+21/06/2021 21:03:02	Gathering encrypted views
+21/06/2021 21:03:02	Gathering indexes
+21/06/2021 21:03:02	Gathering statistics
+21/06/2021 21:03:02	Gathering full-text index stoplists
+21/06/2021 21:03:02	Gathering search property lists
+21/06/2021 21:03:02	Gathering search properties
+21/06/2021 21:03:02	Gathering full-text indexes
+21/06/2021 21:03:02	Gathering column store indexes
+21/06/2021 21:03:02	Gathering spatial indexes
+21/06/2021 21:03:02	Gathering XML indexes
+21/06/2021 21:03:02	Gathering Selective XML indexes
+21/06/2021 21:03:02	Gathering encrypted triggers
+21/06/2021 21:03:02	Gathering triggers
+21/06/2021 21:03:02	Gathering encrypted and clr ddl triggers
+21/06/2021 21:03:02	Gathering ddl triggers
+21/06/2021 21:03:02	Gathering synonyms
+21/06/2021 21:03:02	Gathering defaults
+21/06/2021 21:03:02	Gathering data constraint uddt bindings
+21/06/2021 21:03:02	Gathering rules
+21/06/2021 21:03:02	Gathering data constraint uddt bindings
+21/06/2021 21:03:03	Gathering message types
+21/06/2021 21:03:03	Gathering queues
+21/06/2021 21:03:03	Gathering contracts
+21/06/2021 21:03:03	Gathering services
+21/06/2021 21:03:03	Gathering event notifications
+21/06/2021 21:03:03	Gathering remote service bindings
+21/06/2021 21:03:03	Gathering broker priorities
+21/06/2021 21:03:03	Gathering signatures
+21/06/2021 21:03:03	Gathering data compression options
+21/06/2021 21:03:03	Gathering sequence types
+21/06/2021 21:03:03	Gathering security policies
+21/06/2021 21:03:03	Gather column encryption keys
+21/06/2021 21:03:03	Gathering column master keys
+21/06/2021 21:03:03	Gathering external data sources
+21/06/2021 21:03:03	Gathering external file formats
+21/06/2021 21:03:03	Gathering external tables
+21/06/2021 21:03:03	Gathering extended properties
+21/06/2021 21:03:05	Gathering credentials
+21/06/2021 21:03:05	Gathering logins
+21/06/2021 21:03:05	Gathering server audits
+21/06/2021 21:03:05	Scanning project for duplicate elements
+21/06/2021 21:03:05	Finished duplicate element processing
+21/06/2021 21:03:07	Finished importing database.
+21/06/2021 21:03:07	A summary of the import was saved to the following location: C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\BancoDeDados.ControleDeTarefas\Import Schema Logs\BancoDeDados.Control_20210622120258.log
+21/06/2021 21:03:07	Click Finish to continue...
