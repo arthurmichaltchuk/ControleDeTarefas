@@ -62,7 +62,7 @@ namespace ControleDeTarefas_2._0.ConsoleApp.ConsoleApp
 
         public bool OpcaoInvalida(string opcao)
         {
-            if (opcao != "1" && opcao != "2" && opcao != "3" && opcao != "s")
+            if (opcao != "1" && opcao != "2" && opcao != "3" && opcao != "s" && opcao != "S")
             {
                 ApresentarMensagem("Opção inválida", TipoMensagem.Erro);
                 return true;

@@ -20,6 +20,8 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Telas
 
         public override string ObterOpcao()
         {
+            ConfigurarTitulo("MENU DE CONTATOS");
+
             Console.WriteLine("Digite 1 para inserir novo contato");
             Console.WriteLine("Digite 2 para visualizar contatos");
             Console.WriteLine("Digite 3 para editar contato");

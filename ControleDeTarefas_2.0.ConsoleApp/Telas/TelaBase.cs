@@ -61,5 +61,14 @@ namespace ControleDeTarefas_2._0.ConsoleApp.ConsoleApp
 
             Console.WriteLine();
         }
+
+        protected void ConfigurarTitulo(string subtitulo)
+        {
+            Console.Clear();
+
+            Console.WriteLine(subtitulo);
+
+            Console.WriteLine();
+        }
     }
 }

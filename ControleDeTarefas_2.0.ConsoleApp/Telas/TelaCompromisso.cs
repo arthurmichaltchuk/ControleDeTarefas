@@ -23,6 +23,8 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Telas
 
         public override string ObterOpcao()
         {
+            ConfigurarTitulo("MENU DE COMPROMISSOS");
+
             Console.WriteLine("Digite 1 para inserir novo compromisso");
             Console.WriteLine("Digite 2 para visualizar compromissos");
             Console.WriteLine("Digite 3 para editar compromisso");

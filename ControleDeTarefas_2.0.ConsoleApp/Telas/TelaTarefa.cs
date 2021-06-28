@@ -20,6 +20,8 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Telas
 
         public override string ObterOpcao()
         {
+            ConfigurarTitulo("MENU DE TAREFAS");
+
             Console.WriteLine("Digite 1 para inserir nova tarefa");
             Console.WriteLine("Digite 2 para visualizar tarefas");
             Console.WriteLine("Digite 3 para editar tarefas");
