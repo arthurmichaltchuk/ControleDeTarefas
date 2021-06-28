@@ -12,7 +12,6 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Telas
     public class TelaContato : TelaCadastros<Contatos>, ICadastravel
     {
         readonly ControladorContatos controladorContatos;
-        readonly Contatos contatos;
 
         public TelaContato(ControladorContatos controlador) : base("Cadastro de Contatos", controlador)
         {
@@ -51,8 +50,10 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Telas
 
             Console.Write("Digite o cargo do contato: ");
             string cargo = Console.ReadLine();
-            if (contatos.Validar(email, telefone) != "VALIDO")
+
+            if (Validar(email, telefone) != "VALIDO")
             {
+                ApresentarMensagem("Email ou telefone Invalido! tente novamente...", TipoMensagem.Erro);
                 ObterRegistro(TipoAcao.Inserindo);
             }
             
@@ -61,11 +62,11 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Telas
             return C;
         }
 
-        public override void Visualizar()
+        public override void Visualizar(TipoAcao tipoAcao)
         {
             Console.Clear();
 
-            ConfigurarTela("Visualizando todas tarefas...");
+            ConfigurarTela("Visualizando todos contatos...");
 
             List<Contatos> contatos = controladorContatos.ObterTodosContatos();
 
@@ -84,6 +85,26 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Telas
             }
 
             Console.ReadKey();
+        }
+
+        public string Validar(string email, string telefone)
+        {
+            if (ValidarEmail(email) && ValidarTelefone(telefone))
+                return "VALIDO";
+            return "INVALIDO";
+
+        }
+        private bool ValidarEmail(string email)
+        {
+            if (email.Contains("@") && email.Contains("."))
+                return true;
+            return false;
+        }
+        private bool ValidarTelefone(string telefone)
+        {
+            if (telefone.Length > 8 && telefone.Length < 13)
+                return true;
+            return false;
         }
     }
 }

@@ -38,7 +38,7 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Telas
         public void EditarRegistro()
         {
             ConfigurarTela("Editando registro...");
-            Visualizar();
+            Visualizar(TipoAcao.Editando);
 
             Console.WriteLine("Digite o ID do registro que deseja editar...");
             int idPesquisado = Convert.ToInt32(Console.ReadLine());
@@ -56,7 +56,7 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Telas
         public void ExcluirRegistro()
         {
             ConfigurarTela("Excluindo registro...");
-            Visualizar();
+            Visualizar(TipoAcao.Editando);
 
             Console.WriteLine("Digite o ID do registro que deseja excluir...");
             int idPesquisado = Convert.ToInt32(Console.ReadLine());
@@ -72,13 +72,13 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Telas
 
         public bool VisualizarRegistros()
         {
-            Visualizar();
+            Visualizar(TipoAcao.Inserindo);
             return true;
         }
 
         public abstract T ObterRegistro(TipoAcao tipoAcao);
 
-        public abstract void Visualizar();
+        public abstract void Visualizar(TipoAcao tipoAcao);
     }
 }
 

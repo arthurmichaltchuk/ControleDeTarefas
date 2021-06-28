@@ -1,4 +1,5 @@
 ﻿using ControleDeTarefas_2._0.ConsoleApp.ConsoleApp;
+using ControleDeTarefas_2._0.ConsoleApp.Telas;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -59,13 +60,6 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Controladores
 
         public override string InserirNovo(Tarefa tarefa)
         {
-            SqlConnection conexaoComBanco = new SqlConnection();
-            conexaoComBanco.ConnectionString = enderecoDBTarefas;
-            conexaoComBanco.Open();
-
-            SqlCommand comandoInsercao = new SqlCommand();
-            comandoInsercao.Connection = conexaoComBanco;
-
             string sqlInsercao =
             @"INSERT INTO TBTAREFAS
                 (                
@@ -84,23 +78,9 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Controladores
                 @PERCENTUALCONCLUIDO
                 );";
 
-            sqlInsercao +=
-                @"SELECT SCOPE_IDENTITY();";
-
-            comandoInsercao.CommandText = sqlInsercao;
             try
             {
-                comandoInsercao.Parameters.AddWithValue("TITULO", tarefa.Titulo);
-                comandoInsercao.Parameters.AddWithValue("PRIORIDADE", tarefa.Prioridade);
-                comandoInsercao.Parameters.AddWithValue("DATACRIACAO", tarefa.DataCriacao);
-                comandoInsercao.Parameters.AddWithValue("DATACONCLUSAO", tarefa.DataConclusao);
-                comandoInsercao.Parameters.AddWithValue("PERCENTUALCONCLUIDO", tarefa.PercentualConcluido);
-
-                object id = comandoInsercao.ExecuteScalar();
-
-                tarefa.Id = Convert.ToInt32(id);
-
-                conexaoComBanco.Close();
+                ExecutarCodigo(sqlInsercao, tarefa, TipoExecucao.Inserindo, 0);
                 return "Registrado com sucesso!";
             }
             catch
@@ -154,15 +134,8 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Controladores
             return Ta;
         }
 
-        public override string EditarRegistro(int idSelecionado, Tarefa tarefa)
+        public override string EditarRegistro(int idSelecionado, Tarefa registro)
         {
-            SqlConnection conexaoComBanco = new SqlConnection();
-            conexaoComBanco.ConnectionString = enderecoDBTarefas;
-            conexaoComBanco.Open();
-
-            SqlCommand comandoAtualizacao = new SqlCommand();
-            comandoAtualizacao.Connection = conexaoComBanco;
-
             string sqlAtualizacao =
                 @"UPDATE TBTAREFAS 
 	                SET	
@@ -174,17 +147,7 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Controladores
 		                [ID] = @ID";
             try
             {
-                comandoAtualizacao.CommandText = sqlAtualizacao;
-
-                comandoAtualizacao.Parameters.AddWithValue("ID", idSelecionado);
-                comandoAtualizacao.Parameters.AddWithValue("TITULO", tarefa.Titulo);
-                comandoAtualizacao.Parameters.AddWithValue("PRIORIDADE", tarefa.Prioridade);
-                comandoAtualizacao.Parameters.AddWithValue("DATACRIACAO", tarefa.DataCriacao);
-                comandoAtualizacao.Parameters.AddWithValue("PERCENTUALCONCLUIDO", tarefa.PercentualConcluido);
-
-                comandoAtualizacao.ExecuteNonQuery();
-
-                conexaoComBanco.Close();
+                ExecutarCodigo(sqlAtualizacao, registro, TipoExecucao.Editando, idSelecionado);
                 return "Atualizado com sucesso!";
             }
             catch
@@ -195,32 +158,67 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Controladores
 
         public override string ExcluirRegistro(Tarefa registro)
         {
-            SqlConnection conexaoComBanco = new SqlConnection();
-            conexaoComBanco.ConnectionString = enderecoDBTarefas;
-            conexaoComBanco.Open();
-
-            SqlCommand comandoExclusao = new SqlCommand();
-            comandoExclusao.Connection = conexaoComBanco;
-
             string sqlExclusao =
                 @"DELETE FROM TBTAREFAS 	                
 	                WHERE 
 		                [ID] = @ID";
             try
             {
-                comandoExclusao.CommandText = sqlExclusao;
-
-                comandoExclusao.Parameters.AddWithValue("ID", registro.Id);
-
-                comandoExclusao.ExecuteNonQuery();
-
-                conexaoComBanco.Close();
+                ExecutarCodigo(sqlExclusao, registro, TipoExecucao.Excluindo, 0);
                 return "Excluído com sucesso!";
             }
             catch
             {
                 return "Erro ao Excluir";
             }
+        }
+
+        private void ExecutarCodigo(string comando, Tarefa registro, TipoExecucao tipoExecucao, int idSelecionado)
+        {
+            SqlConnection conexaoComBanco = new SqlConnection();
+            conexaoComBanco.ConnectionString = enderecoDBTarefas;
+            conexaoComBanco.Open();
+
+            SqlCommand comandoExecucao = new SqlCommand();
+            comandoExecucao.Connection = conexaoComBanco;
+
+            if (tipoExecucao == TipoExecucao.Excluindo)
+            {
+                comandoExecucao.CommandText = comando;
+
+                comandoExecucao.Parameters.AddWithValue("ID", registro.Id);
+
+                comandoExecucao.ExecuteNonQuery();
+            }
+            else if (tipoExecucao == TipoExecucao.Editando)
+            {
+                comandoExecucao.CommandText = comando;
+
+                comandoExecucao.Parameters.AddWithValue("ID", idSelecionado);
+                comandoExecucao.Parameters.AddWithValue("TITULO", registro.Titulo);
+                comandoExecucao.Parameters.AddWithValue("PRIORIDADE", registro.Prioridade);
+                comandoExecucao.Parameters.AddWithValue("DATACRIACAO", registro.DataCriacao);
+                comandoExecucao.Parameters.AddWithValue("PERCENTUALCONCLUIDO", registro.PercentualConcluido);
+
+                comandoExecucao.ExecuteNonQuery();
+            }
+            else if (tipoExecucao == TipoExecucao.Inserindo)
+            {
+                comando +=
+                @"SELECT SCOPE_IDENTITY();";
+
+                comandoExecucao.CommandText = comando;
+                comandoExecucao.Parameters.AddWithValue("TITULO", registro.Titulo);
+                comandoExecucao.Parameters.AddWithValue("PRIORIDADE", registro.Prioridade);
+                comandoExecucao.Parameters.AddWithValue("DATACRIACAO", registro.DataCriacao);
+                comandoExecucao.Parameters.AddWithValue("DATACONCLUSAO", registro.DataConclusao);
+                comandoExecucao.Parameters.AddWithValue("PERCENTUALCONCLUIDO", registro.PercentualConcluido);
+
+                object id = comandoExecucao.ExecuteScalar();
+
+                registro.Id = Convert.ToInt32(id);
+            }
+            conexaoComBanco.Close();
         }
     }
 }

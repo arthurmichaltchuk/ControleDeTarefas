@@ -1,4 +1,5 @@
 ﻿using ControleDeTarefas_2._0.ConsoleApp.Dominio;
+using ControleDeTarefas_2._0.ConsoleApp.Telas;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -59,13 +60,6 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Controladores
         }
         public override string EditarRegistro(int idSelecionado, Contatos registro)
         {
-            SqlConnection conexaoComBanco = new SqlConnection();
-            conexaoComBanco.ConnectionString = enderecoDBContatos;
-            conexaoComBanco.Open();
-
-            SqlCommand comandoAtualizacao = new SqlCommand();
-            comandoAtualizacao.Connection = conexaoComBanco;
-
             string sqlAtualizacao =
                 @"UPDATE TBCONTATOS 
 	                SET	
@@ -78,18 +72,7 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Controladores
 		                [ID] = @ID";
             try
             {
-                comandoAtualizacao.CommandText = sqlAtualizacao;
-
-                comandoAtualizacao.Parameters.AddWithValue("ID", idSelecionado);
-                comandoAtualizacao.Parameters.AddWithValue("NOME", registro.Nome);
-                comandoAtualizacao.Parameters.AddWithValue("EMAIL", registro.Email);
-                comandoAtualizacao.Parameters.AddWithValue("TELEFONE", registro.Telefone);
-                comandoAtualizacao.Parameters.AddWithValue("EMPRESA", registro.Empresa);
-                comandoAtualizacao.Parameters.AddWithValue("CARGO", registro.Cargo);
-
-                comandoAtualizacao.ExecuteNonQuery();
-
-                conexaoComBanco.Close();
+                ExecutarCodigo(sqlAtualizacao, registro, TipoExecucao.Editando, idSelecionado);
                 return "Atualizado com sucesso!";
             }
             catch
@@ -100,26 +83,13 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Controladores
 
         public override string ExcluirRegistro(Contatos registro)
         {
-            SqlConnection conexaoComBanco = new SqlConnection();
-            conexaoComBanco.ConnectionString = enderecoDBContatos;
-            conexaoComBanco.Open();
-
-            SqlCommand comandoExclusao = new SqlCommand();
-            comandoExclusao.Connection = conexaoComBanco;
-
             string sqlExclusao =
                 @"DELETE FROM TBCONTATOS 	                
 	                WHERE 
 		                [ID] = @ID";
             try
             {
-                comandoExclusao.CommandText = sqlExclusao;
-
-                comandoExclusao.Parameters.AddWithValue("ID", registro.Id);
-
-                comandoExclusao.ExecuteNonQuery();
-
-                conexaoComBanco.Close();
+                ExecutarCodigo(sqlExclusao, registro, TipoExecucao.Excluindo, 0);
                 return "Excluído com sucesso!";
             }
             catch
@@ -130,13 +100,6 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Controladores
 
         public override string InserirNovo(Contatos registro)
         {
-            SqlConnection conexaoComBanco = new SqlConnection();
-            conexaoComBanco.ConnectionString = enderecoDBContatos;
-            conexaoComBanco.Open();
-
-            SqlCommand comandoInsercao = new SqlCommand();
-            comandoInsercao.Connection = conexaoComBanco;
-
             string sqlInsercao =
             @"INSERT INTO TBCONTATOS
                 (                
@@ -155,23 +118,9 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Controladores
                 @CARGO
                 );";
 
-            sqlInsercao +=
-                @"SELECT SCOPE_IDENTITY();";
-
-            comandoInsercao.CommandText = sqlInsercao;
             try
             {
-                comandoInsercao.Parameters.AddWithValue("NOME", registro.Nome);
-                comandoInsercao.Parameters.AddWithValue("EMAIL", registro.Email);
-                comandoInsercao.Parameters.AddWithValue("TELEFONE", registro.Telefone);
-                comandoInsercao.Parameters.AddWithValue("EMPRESA", registro.Empresa);
-                comandoInsercao.Parameters.AddWithValue("CARGO", registro.Cargo);
-
-                object id = comandoInsercao.ExecuteScalar();
-
-                registro.Id = Convert.ToInt32(id);
-
-                conexaoComBanco.Close();
+                ExecutarCodigo(sqlInsercao, registro, TipoExecucao.Inserindo, 0);
                 return "Registrado com sucesso!";
             }
             catch
@@ -223,6 +172,55 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Controladores
             conexaoComBanco.Close();
 
             return C;
+        }
+
+        private void ExecutarCodigo(string comando, Contatos registro, TipoExecucao tipoExecucao, int idSelecionado)
+        {
+            SqlConnection conexaoComBanco = new SqlConnection();
+            conexaoComBanco.ConnectionString = enderecoDBContatos;
+            conexaoComBanco.Open();
+
+            SqlCommand comandoExecucao = new SqlCommand();
+            comandoExecucao.Connection = conexaoComBanco;
+
+            if (tipoExecucao == TipoExecucao.Excluindo)
+            {
+                comandoExecucao.CommandText = comando;
+
+                comandoExecucao.Parameters.AddWithValue("ID", registro.Id);
+
+                comandoExecucao.ExecuteNonQuery();
+            }
+            else if (tipoExecucao == TipoExecucao.Editando)
+            {
+                comandoExecucao.CommandText = comando;
+
+                comandoExecucao.Parameters.AddWithValue("ID", idSelecionado);
+                comandoExecucao.Parameters.AddWithValue("NOME", registro.Nome);
+                comandoExecucao.Parameters.AddWithValue("EMAIL", registro.Email);
+                comandoExecucao.Parameters.AddWithValue("TELEFONE", registro.Telefone);
+                comandoExecucao.Parameters.AddWithValue("EMPRESA", registro.Empresa);
+                comandoExecucao.Parameters.AddWithValue("CARGO", registro.Cargo);
+
+                comandoExecucao.ExecuteNonQuery();
+            }
+            else if (tipoExecucao == TipoExecucao.Inserindo)
+            {
+                comando +=
+                @"SELECT SCOPE_IDENTITY();";
+
+                comandoExecucao.CommandText = comando;
+                comandoExecucao.Parameters.AddWithValue("NOME", registro.Nome);
+                comandoExecucao.Parameters.AddWithValue("EMAIL", registro.Email);
+                comandoExecucao.Parameters.AddWithValue("TELEFONE", registro.Telefone);
+                comandoExecucao.Parameters.AddWithValue("EMPRESA", registro.Empresa);
+                comandoExecucao.Parameters.AddWithValue("CARGO", registro.Cargo);
+
+                object id = comandoExecucao.ExecuteScalar();
+
+                registro.Id = Convert.ToInt32(id);
+            }
+            conexaoComBanco.Close();
         }
     }
 }

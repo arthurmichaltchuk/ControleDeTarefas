@@ -66,7 +66,7 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Telas
             return tarefa;
         }
 
-        public override void Visualizar()
+        public override void Visualizar(TipoAcao tipoAcao)
         {
             Console.Clear();
 
@@ -126,7 +126,6 @@ namespace ControleDeTarefas_2._0.ConsoleApp.Telas
             Console.WriteLine("Data Criação: " + item.DataCriacao.ToString("dd'/'MM'/'yyyy"));
             if(tipo == "concluidas")
                 Console.WriteLine("Data Conclusão: " + item.DataConclusao.ToString("dd'/'MM'/'yyyy"));
-            Console.WriteLine("Prioridade: " + item.Prioridade);
             Console.WriteLine();
         }
     }

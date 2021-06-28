@@ -1,0 +1,6 @@
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\BancoDeDados.ControleDeTarefas\bin\Debug\BancoDeDados.ControleDeTarefas.dacpac
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\BancoDeDados.ControleDeTarefas\bin\Debug\BancoDeDados.ControleDeTarefas.dll
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\BancoDeDados.ControleDeTarefas\bin\Debug\BancoDeDados.ControleDeTarefas.pdb
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\BancoDeDados.ControleDeTarefas\obj\Debug\BancoDeDados.ControleDeTarefas.sqlproj.AssemblyReference.cache
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\BancoDeDados.ControleDeTarefas\obj\Debug\BancoDeDados.ControleDeTarefas.dll
+C:\Users\Michaltchuk\Desktop\NDD\ControleDeTarefas\ControleDeTarefas_2.0\BancoDeDados.ControleDeTarefas\obj\Debug\BancoDeDados.ControleDeTarefas.pdb

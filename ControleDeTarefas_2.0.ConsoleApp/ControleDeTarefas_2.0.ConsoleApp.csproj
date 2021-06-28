@@ -44,8 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controladores\ControladorBase.cs" />
+    <Compile Include="Controladores\ControladorCompromisso.cs" />
     <Compile Include="Controladores\ControladorContatos.cs" />
     <Compile Include="Controladores\ControladorTarefa.cs" />
+    <Compile Include="Dominio\Compromisso.cs" />
     <Compile Include="Dominio\Contatos.cs" />
     <Compile Include="Dominio\EntidadeBase.cs" />
     <Compile Include="Dominio\Tarefa.cs" />
@@ -54,10 +56,12 @@
     <Compile Include="Telas\Icadastro.cs" />
     <Compile Include="Telas\TelaBase.cs" />
     <Compile Include="Telas\TelaCadastro.cs" />
+    <Compile Include="Telas\TelaCompromisso.cs" />
     <Compile Include="Telas\TelaContato.cs" />
     <Compile Include="Telas\TelaPrincipal.cs" />
     <Compile Include="Telas\TelaTarefa.cs" />
     <Compile Include="Telas\TipoAcao.cs" />
+    <Compile Include="Telas\TipoExecucao.cs" />
     <Compile Include="Telas\TipoMensagem.cs" />
   </ItemGroup>
   <ItemGroup>
